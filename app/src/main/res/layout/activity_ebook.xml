@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,18 +7,22 @@
     tools:context=".EbookActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Free eBooks Finder"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/activity_ebook_header"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:textSize="36sp"
+        android:background="#4fb3bf"
+        android:textColor="@color/colorPrimaryDark"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        android:gravity="center_horizontal"
+        android:background="#f5f5f5">
 
         <EditText
             android:id="@+id/editText"
@@ -27,12 +30,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/activity_ebook_edittext_hint_ebook_name" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="button" />
+            android:text="@string/activity_ebook_button_find"
+            android:layout_marginLeft="8dp"/>
     </LinearLayout>
 
     <ListView

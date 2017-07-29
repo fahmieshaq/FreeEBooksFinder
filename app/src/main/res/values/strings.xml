@@ -1,3 +1,37 @@
 <resources>
-    <string name="app_name">Free EBooks Finder</string>
+    <!-- Text to display in the app bar [CHAR LIMIT=NONE] -->
+    <string name="app_name">Free eBooks Finder App</string>
+
+    <!-- Text to display as a hint in the edittext field [CHAR LIMIT=NONE] -->
+    <string name="activity_ebook_edittext_hint_ebook_name">eBook Name</string>
+
+    <!-- Text to display in search button [CHAR LIMIT=NONE] -->
+    <string name="activity_ebook_button_find">Find</string>
+
+    <!-- Text to display as the header title of main activity [CHAR LIMIT=NONE] -->
+    <string name="activity_ebook_header"><b><i>Free</i></b> eBooks Listing</string>
+
+    <!-- Categories label to display in the list item view [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_label_categories"><strong>Categories:</strong></string>
+
+    <!-- Authors label to display in the list item view [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_label_authors"><strong>Authors:</strong></string>
+
+    <!-- Publish date label to display in the list item view [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_label_published_date"><strong>Published Date:</strong></string>
+
+    <!-- Number of pages label to display in the list item view [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_label_page_count"><strong>Page Count:</strong></string>
+
+    <!-- eBook preview label to display in the list item view [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_label_preview"><strong>Preview:</strong></string>
+
+    <!-- Google Books label to display in the list item view [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_label_google_books"><strong>Google Books:</strong></string>
+
+    <!-- PDF label to display in the list item view [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_label_pdf"><strong>PDF:</strong></string>
+
+    <!-- Language label to display in the list item view [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_label_language"><strong>Language:</strong></string>
 </resources>
