@@ -7,14 +7,14 @@ public class Ebook {
     private String mAuthor;
     private String mPublishedDate;
     private String mPageCount;
-    private int mPreviewUrl;
-    private int mGoogleBooksUrl;
-    private int mPdfUrl;
+    private String mPreviewUrl;
+    private String mGoogleBooksUrl;
+    private String mPdfUrl;
     private String mLanguage;
 
     public Ebook(String title, String category, String author, String publishedDate,
-                 String pageCount, int previewUrl, int googleBooksUrl,
-                 int pdfUrl, String language) {
+                 String pageCount, String previewUrl, String googleBooksUrl,
+                 String pdfUrl, String language) {
         mTitle = title;
         mCategory = category;
         mAuthor = author;
@@ -46,15 +46,15 @@ public class Ebook {
         return mPageCount;
     }
 
-    public int getPreviewUrl() {
+    public String getPreviewUrl() {
         return mPreviewUrl;
     }
 
-    public int getGoogleBooksUrl() {
+    public String getGoogleBooksUrl() {
         return mGoogleBooksUrl;
     }
 
-    public int getPdfUrl() {
+    public String getPdfUrl() {
         return mPdfUrl;
     }
 
