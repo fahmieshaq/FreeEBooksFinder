@@ -42,6 +42,17 @@ public class EbookAdapter extends ArrayAdapter<Ebook>{
         // Populate book title of the current ebook
         TextView titleTextView = (TextView) convertView.findViewById(R.id.list_item_ebook_title);
         titleTextView.setText(currentEbook.getTitle());
+        // Open a web browser with the google books Url when a user clicks the book title
+        titleTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(currentEbook.getGoogleBooksUrl()));
+                if (intent.resolveActivity(getContext().getPackageManager()) != null) {
+                    getContext().startActivity(intent);
+                }
+            }
+        });
 
         // Populate categories of the current ebook
         TextView categoryTextView = (TextView) convertView.findViewById(R.id.list_item_ebook_categories);

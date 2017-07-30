@@ -3,10 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#f5f5f5"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:paddingTop="16dp"
     android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/list_item_ebook_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Flowers from Hill and Dale"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/colorPrimaryDark" />
 
     <ImageView
         android:id="@+id/list_item_ebook_image"
@@ -19,180 +27,171 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="16dp"
-        android:paddingRight="18dp">
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingLeft="40dp">
 
         <TextView
-            android:id="@+id/list_item_ebook_title"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/list_item_ebook_label_categories"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/list_item_ebook_categories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Flowers from Hill and Dale"
-            android:gravity="center_horizontal"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="@color/colorPrimaryDark" />
+            tools:text="Flowers, Houses"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingLeft="40dp">
+
+        <TextView
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp">
+            android:text="@string/list_item_ebook_label_authors"
+            android:textAppearance="?android:textAppearanceSmall" />
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/list_item_ebook_label_categories"
-                android:textAppearance="?android:textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/list_item_ebook_categories"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Flowers, Houses"
-                android:textAppearance="?android:textAppearanceSmall" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/list_item_ebook_authors"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="4dp">
+            tools:text="Anne Pratt, Fahmi Eshaq, James Arnold"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/list_item_ebook_label_authors"
-                android:textAppearance="?android:textAppearanceSmall" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingLeft="40dp">
 
-            <TextView
-                android:id="@+id/list_item_ebook_authors"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Anne Pratt, Fahmi Eshaq, James Arnold"
-                android:textAppearance="?android:textAppearanceSmall" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="4dp">
+            android:text="@string/list_item_ebook_label_published_date"
+            android:textAppearance="?android:textAppearanceSmall" />
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/list_item_ebook_label_published_date"
-                android:textAppearance="?android:textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/list_item_ebook_published_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="1983"
-                android:textAppearance="?android:textAppearanceSmall" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/list_item_ebook_published_date"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="4dp">
+            tools:text="1983"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/list_item_ebook_label_page_count"
-                android:textAppearance="?android:textAppearanceSmall" />
 
-            <TextView
-                android:id="@+id/list_item_ebook_page_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="443"
-                android:textAppearance="?android:textAppearanceSmall" />
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingLeft="40dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="4dp">
+            android:text="@string/list_item_ebook_label_page_count"
+            android:textAppearance="?android:textAppearanceSmall" />
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/list_item_ebook_label_preview"
-                android:textAppearance="?android:textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/list_item_ebook_preview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Available"
-                android:textAppearance="?android:textAppearanceSmall" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/list_item_ebook_page_count"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="4dp">
+            tools:text="443"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/list_item_ebook_label_google_books"
-                android:textAppearance="?android:textAppearanceSmall" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingLeft="40dp">
 
-            <TextView
-                android:id="@+id/list_item_ebook_google_books"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Available"
-                android:textAppearance="?android:textAppearanceSmall" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="4dp">
+            android:text="@string/list_item_ebook_label_preview"
+            android:textAppearance="?android:textAppearanceSmall" />
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/list_item_ebook_label_pdf"
-                android:textAppearance="?android:textAppearanceSmall" />
-
-            <TextView
-                android:id="@+id/list_item_ebook_pdf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Available"
-                android:textAppearance="?android:textAppearanceSmall" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/list_item_ebook_preview"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="4dp">
+            tools:text="Available"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/list_item_ebook_label_language"
-                android:textAppearance="?android:textAppearanceSmall" />
 
-            <TextView
-                android:id="@+id/list_item_ebook_language"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="English"
-                android:textAppearance="?android:textAppearanceSmall" />
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingLeft="40dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/list_item_ebook_label_google_books"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/list_item_ebook_google_books"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Available"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingLeft="40dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/list_item_ebook_label_pdf"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/list_item_ebook_pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Available"
+            android:textAppearance="?android:textAppearanceSmall" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingLeft="40dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/list_item_ebook_label_language"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/list_item_ebook_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="English"
+            android:textAppearance="?android:textAppearanceSmall" />
     </LinearLayout>
 </LinearLayout>

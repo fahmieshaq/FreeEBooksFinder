@@ -13,20 +13,32 @@ public class EbookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ebook);
 
-        // Category is an array (2nd param) + Authors is an array (3rd Param)
         ArrayList<Ebook> ebooks = new ArrayList<>();
-        String[] val = {"Flowers", "House"};
-        ebooks.add(new Ebook(R.drawable.sample_image, "Flowers from Hill and Dale", val,
-                val, "1852", "300",
-                "https://play.google.com/store/books/details?id=pK9YAAAAMAAJ&source=gbs_api",
-                null,
-                "http://www.fahmieshaq.com",
+
+        String[] categories = {"Flowers", "House"};
+        String[] authors = {"Frances Sargent Osgood"};
+        ebooks.add(new Ebook(R.drawable.sample_img_1,
+                "A wreath of wild flowers from New England",
+                categories,
+                authors,
+                "1838",
+                "132",
+                "http://books.google.ca/books?id=dGEEAAAAQAAJ&printsec=frontcover&dq=flowers&hl=&as_brr=7&cd=6&source=gbs_api",
+                "https://play.google.com/store/books/details?id=dGEEAAAAQAAJ&source=gbs_api",
+                "http://books.google.ca/books/download/A_wreath_of_wild_flowers_from_New_Englan.pdf?id=dGEEAAAAQAAJ&hl=&output=pdf&sig=ACfU3U0vW4YcA2-faT0ZwcPAD-jN-MLpJw&source=gbs_api",
                 "en"));
-        ebooks.add(new Ebook(R.drawable.sample_image, "Flowers from Hill and Dale 2", val,
-                val, "1985", "300",
-                "",
-                "https://play.google.com/store/books/details?id=pK9YAAAAMAAJ&source=gbs_api",
-                "http://books.google.ca/books/download/Flowers_from_Hill_and_Dale.pdf?id=pK9YAAAAMAAJ&hl=&output=pdf&sig=ACfU3U0UH-bXyjbr2c_a7a3KgfVGtHUkQg&source=gbs_api",
+
+        categories = new String[] {"Flowers"};
+        authors = new String[] {"Anne Pratt"};
+        ebooks.add(new Ebook(R.drawable.sample_img_2,
+                "Flowers and their associations",
+                categories,
+                authors,
+                "1840",
+                null,
+                "http://books.google.ca/books?id=ktkDAAAAQAAJ&printsec=frontcover&dq=flowers&hl=&as_brr=7&cd=3&source=gbs_api",
+                "https://play.google.com/store/books/details?id=ktkDAAAAQAAJ&source=gbs_api",
+                "http://books.google.ca/books/download/Flowers_and_their_associations.pdf?id=ktkDAAAAQAAJ&hl=&output=pdf&sig=ACfU3U3t31n5hoTWLkxSLsAOK6I3ZhgdHw&source=gbs_api",
                 "en"));
 
         EbookAdapter adapter = new EbookAdapter(this, ebooks);
@@ -34,15 +46,3 @@ public class EbookActivity extends AppCompatActivity {
         ebooksListView.setAdapter(adapter);
     }
 }
-
-
-//https://www.googleapis.com/books/v1/volumes?q=flowers&filter=free-ebooks&orderBy=relevance&key=yourAPIKey
-
-
-//AIzaSyB20aZ9XkAkt4YTPZWDEG71tqPsPJZ0QxM
-
-//Root (object) -> items (array) -> array index 0 is object -> volumeInfo property object
-// -> title property -> published date property -> categories propery has an array with one index
-// -> imageLinks property (object) -> thumbnail property
-// -> preview link property -> info link property (Read Now)
-// -> PDF (object) -> downloadLink
