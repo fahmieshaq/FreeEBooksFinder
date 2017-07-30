@@ -4,13 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#f5f5f5"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
 
     <ImageView
+        android:id="@+id/list_item_ebook_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:src="@drawable/sample_image"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:layout_gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,6 +24,7 @@
         android:paddingRight="18dp">
 
         <TextView
+            android:id="@+id/list_item_ebook_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Flowers from Hill and Dale"
@@ -40,6 +45,7 @@
                 android:textAppearance="?android:textAppearanceSmall" />
 
             <TextView
+                android:id="@+id/list_item_ebook_categories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Flowers, Houses"
@@ -59,6 +65,7 @@
                 android:textAppearance="?android:textAppearanceSmall" />
 
             <TextView
+                android:id="@+id/list_item_ebook_authors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Anne Pratt, Fahmi Eshaq, James Arnold"
@@ -78,6 +85,7 @@
                 android:textAppearance="?android:textAppearanceSmall" />
 
             <TextView
+                android:id="@+id/list_item_ebook_published_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="1983"
@@ -98,6 +106,7 @@
                 android:textAppearance="?android:textAppearanceSmall" />
 
             <TextView
+                android:id="@+id/list_item_ebook_page_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="443"
@@ -117,11 +126,11 @@
                 android:textAppearance="?android:textAppearanceSmall" />
 
             <TextView
+                android:id="@+id/list_item_ebook_preview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Available"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textAppearance="?android:textAppearanceSmall" />
         </LinearLayout>
 
 
@@ -138,11 +147,11 @@
                 android:textAppearance="?android:textAppearanceSmall" />
 
             <TextView
+                android:id="@+id/list_item_ebook_google_books"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Available"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textAppearance="?android:textAppearanceSmall" />
         </LinearLayout>
 
         <LinearLayout
@@ -158,11 +167,11 @@
                 android:textAppearance="?android:textAppearanceSmall" />
 
             <TextView
+                android:id="@+id/list_item_ebook_pdf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Available"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textAppearance="?android:textAppearanceSmall" />
         </LinearLayout>
 
 
@@ -179,6 +188,7 @@
                 android:textAppearance="?android:textAppearanceSmall" />
 
             <TextView
+                android:id="@+id/list_item_ebook_language"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="English"

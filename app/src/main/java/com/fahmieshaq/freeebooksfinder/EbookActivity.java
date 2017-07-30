@@ -2,6 +2,7 @@ package com.fahmieshaq.freeebooksfinder;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -14,18 +15,23 @@ public class EbookActivity extends AppCompatActivity {
 
         // Category is an array (2nd param) + Authors is an array (3rd Param)
         ArrayList<Ebook> ebooks = new ArrayList<>();
-        ebooks.add(new Ebook("Flowers from Hill and Dale", "Flowers",
-                "Henrietta Dumont", "1852", "300",
-                "http://books.google.ca/books?id=2bCdaZ7KvDsC&printsec=frontcover&dq=flowers&hl=&as_brr=7&cd=2&source=gbs_api",
-                "https://play.google.com/store/books/details?id=2bCdaZ7KvDsC&source=gbs_api",
-                "http://books.google.ca/books/download/The_Language_of_Flowers.pdf?id=2bCdaZ7KvDsC&hl=&output=pdf&sig=ACfU3U1n9agbciLzFXS4cd_vmKAJsTiEZA&source=gbs_api",
+        String[] val = {"Flowers", "House"};
+        ebooks.add(new Ebook(R.drawable.sample_image, "Flowers from Hill and Dale", val,
+                val, "1852", "300",
+                "https://play.google.com/store/books/details?id=pK9YAAAAMAAJ&source=gbs_api",
+                null,
+                "http://www.fahmieshaq.com",
                 "en"));
-        ebooks.add(new Ebook("Flowers from Hill and Dale 2", "Flowers",
-                "Henrietta Dumont", "1852", "300",
-                "http://books.google.ca/books?id=2bCdaZ7KvDsC&printsec=frontcover&dq=flowers&hl=&as_brr=7&cd=2&source=gbs_api",
-                "https://play.google.com/store/books/details?id=2bCdaZ7KvDsC&source=gbs_api",
-                "http://books.google.ca/books/download/The_Language_of_Flowers.pdf?id=2bCdaZ7KvDsC&hl=&output=pdf&sig=ACfU3U1n9agbciLzFXS4cd_vmKAJsTiEZA&source=gbs_api",
+        ebooks.add(new Ebook(R.drawable.sample_image, "Flowers from Hill and Dale 2", val,
+                val, "1985", "300",
+                "",
+                "https://play.google.com/store/books/details?id=pK9YAAAAMAAJ&source=gbs_api",
+                "http://books.google.ca/books/download/Flowers_from_Hill_and_Dale.pdf?id=pK9YAAAAMAAJ&hl=&output=pdf&sig=ACfU3U0UH-bXyjbr2c_a7a3KgfVGtHUkQg&source=gbs_api",
                 "en"));
+
+        EbookAdapter adapter = new EbookAdapter(this, ebooks);
+        ListView ebooksListView = (ListView) findViewById(R.id.ebooksListView);
+        ebooksListView.setAdapter(adapter);
     }
 }
 

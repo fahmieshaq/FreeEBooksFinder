@@ -34,4 +34,10 @@
 
     <!-- Language label to display in the list item view [CHAR LIMIT=NONE] -->
     <string name="list_item_ebook_label_language"><strong>Language:</strong></string>
+
+    <!-- Text to display in the list item view when a URL value is empty or null. N/A stands for Not Available [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_value_not_available">N/A</string>
+
+    <!-- Text to display in the list item view when a URL value is available. This text is displayed as a hyperlink [CHAR LIMIT=NONE] -->
+    <string name="list_item_ebook_value_available"><u>Available</u></string>
 </resources>

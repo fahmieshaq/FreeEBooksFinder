@@ -1,10 +1,13 @@
 package com.fahmieshaq.freeebooksfinder;
 
+import android.text.TextUtils;
+
 public class Ebook {
 
+    private int mImage;
     private String mTitle;
-    private String mCategory;
-    private String mAuthor;
+    private String[] mCategory;
+    private String[] mAuthor;
     private String mPublishedDate;
     private String mPageCount;
     private String mPreviewUrl;
@@ -12,9 +15,10 @@ public class Ebook {
     private String mPdfUrl;
     private String mLanguage;
 
-    public Ebook(String title, String category, String author, String publishedDate,
+    public Ebook(int image, String title, String[] category, String[] author, String publishedDate,
                  String pageCount, String previewUrl, String googleBooksUrl,
                  String pdfUrl, String language) {
+        mImage = image;
         mTitle = title;
         mCategory = category;
         mAuthor = author;
@@ -26,15 +30,17 @@ public class Ebook {
         mLanguage = language;
     }
 
+    public int getImage() { return mImage; }
+
     public String getTitle() {
         return mTitle;
     }
 
-    public String getCategory() {
+    public String[] getCategory() {
         return mCategory;
     }
 
-    public String getAuthor() {
+    public String[] getAuthor() {
         return mAuthor;
     }
 
@@ -60,5 +66,29 @@ public class Ebook {
 
     public String getLanguage() {
         return mLanguage;
+    }
+
+    public boolean isPreviewUrl() {
+        boolean isAvailable = false;
+        if(!TextUtils.isEmpty(mPreviewUrl)) {
+            isAvailable = true;
+        }
+        return isAvailable;
+    }
+
+    public boolean isGoogleBooksUrl() {
+        boolean isAvailable = false;
+        if(!TextUtils.isEmpty(mGoogleBooksUrl)) {
+            isAvailable = true;
+        }
+        return isAvailable;
+    }
+
+    public boolean isPdfUrl() {
+        boolean isAvailable = false;
+        if(!TextUtils.isEmpty(mPdfUrl)) {
+            isAvailable = true;
+        }
+        return isAvailable;
     }
 }
