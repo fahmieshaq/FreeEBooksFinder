@@ -2,12 +2,14 @@ package com.fahmieshaq.freeebooksfinder;
 
 import android.text.TextUtils;
 
+import org.json.JSONArray;
+
 public class Ebook {
 
-    private int mImage;
+    private String mImageUrl;
     private String mTitle;
-    private String[] mCategory;
-    private String[] mAuthor;
+    private JSONArray mCategory;
+    private JSONArray mAuthor;
     private String mPublishedDate;
     private String mPageCount;
     private String mPreviewUrl;
@@ -15,10 +17,10 @@ public class Ebook {
     private String mPdfUrl;
     private String mLanguage;
 
-    public Ebook(int image, String title, String[] category, String[] author, String publishedDate,
+    public Ebook(String imageUrl, String title, JSONArray category, JSONArray author, String publishedDate,
                  String pageCount, String previewUrl, String googleBooksUrl,
                  String pdfUrl, String language) {
-        mImage = image;
+        mImageUrl = imageUrl;
         mTitle = title;
         mCategory = category;
         mAuthor = author;
@@ -30,17 +32,17 @@ public class Ebook {
         mLanguage = language;
     }
 
-    public int getImage() { return mImage; }
+    public String getImage() { return mImageUrl; }
 
     public String getTitle() {
         return mTitle;
     }
 
-    public String[] getCategory() {
+    public JSONArray getCategory() {
         return mCategory;
     }
 
-    public String[] getAuthor() {
+    public JSONArray getAuthor() {
         return mAuthor;
     }
 
