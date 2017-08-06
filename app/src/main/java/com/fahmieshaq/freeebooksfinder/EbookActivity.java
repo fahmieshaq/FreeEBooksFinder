@@ -85,18 +85,17 @@ public class EbookActivity extends AppCompatActivity implements LoaderManager.Lo
                         // Get the URL that will give us data results
                         mRequestUrl = getRequestUrl(searchKeyword);
 
-                        // Re-launch the loader that runs http request and handle json responses in the background
+                        // Launch a new or restart an existent loader that runs http request and handle json responses in the background
                         addLoadIndicator();
                         getSupportLoaderManager().restartLoader(EBOOKS_LOADER_ID, null, EbookActivity.this);
                     }
                 }
             });
 
-            // Before launching the initial loader, make sure request url is not null.
-            if (mRequestUrl != null) {
-                getSupportLoaderManager().initLoader(EBOOKS_LOADER_ID, null, this);
+            // If a saved instance exists, re-use the last created loader.
+            if(savedInstanceState != null) {
+                getSupportLoaderManager().initLoader(EBOOKS_LOADER_ID, null, EbookActivity.this);
             }
-
         } else { // Internet is not connected.
             // Since onCreate() runs once, we won't be
             // able to re-execute the code in onCreate() method. Thus, the only way
@@ -157,8 +156,16 @@ public class EbookActivity extends AppCompatActivity implements LoaderManager.Lo
 
     @Override
     public Loader<List<Ebook>> onCreateLoader(int id, Bundle args) {
-        // EbookLoader runs network activities in the background
-        // and the results are brought back to onLoadFinished()
+        /**
+         * EbookLoader runs network activities in the background
+         * and the results are brought back to onLoadFinished().
+         * However, first make sure URL exist. Otherwise, http
+         * request connection will fail
+         */
+        if(mRequestUrl == null) {
+            return null;
+        }
+
         return new EbookLoader(this, mRequestUrl);
     }
 
