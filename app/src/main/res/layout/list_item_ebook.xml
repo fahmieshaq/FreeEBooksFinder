@@ -17,14 +17,6 @@
         android:textColor="@color/colorPrimaryDark"
         android:padding="16dp"/>
 
-    <ImageView
-        android:id="@+id/list_item_ebook_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:src="@drawable/sample_image"
-        android:padding="16dp"
-        android:layout_gravity="center"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -154,28 +146,6 @@
             tools:text="Available"
             android:textAppearance="?android:textAppearanceSmall" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="4dp"
-        android:paddingLeft="40dp">
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/list_item_ebook_label_pdf"
-            android:textAppearance="?android:textAppearanceSmall" />
-
-        <TextView
-            android:id="@+id/list_item_ebook_pdf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Available"
-            android:textAppearance="?android:textAppearanceSmall" />
-    </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"

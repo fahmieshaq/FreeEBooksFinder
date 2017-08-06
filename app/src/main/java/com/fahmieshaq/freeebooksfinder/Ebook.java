@@ -1,6 +1,5 @@
 package com.fahmieshaq.freeebooksfinder;
 
-import android.net.Uri;
 import android.text.TextUtils;
 
 import org.json.JSONArray;
@@ -10,8 +9,6 @@ import org.json.JSONArray;
  */
 public class Ebook {
 
-    // mImageUrl represents book's epresents a URL of the book's image
-    private Uri mImageUrl;
     // mTitle represents book's title
     private String mTitle;
     // mCategory represents a list of categories that a book belongs to
@@ -26,15 +23,11 @@ public class Ebook {
     private String mPreviewUrl;
     // mPlayStoreUrl represents a URL of Play Store where the user can read the book
     private String mPlayStoreUrl;
-    // mPdfUrl represents a URL of the PDF version of the book
-    private String mPdfUrl;
     // mLanguage represents the book's language
     private String mLanguage;
 
-    public Ebook(Uri imageUrl, String title, JSONArray category, JSONArray author, String publishedDate,
-                 String pageCount, String previewUrl, String googleBooksUrl,
-                 String pdfUrl, String language) {
-        mImageUrl = imageUrl;
+    public Ebook(String title, JSONArray category, JSONArray author, String publishedDate,
+                 String pageCount, String previewUrl, String googleBooksUrl, String language) {
         mTitle = title;
         mCategory = category;
         mAuthor = author;
@@ -42,15 +35,7 @@ public class Ebook {
         mPageCount = pageCount;
         mPreviewUrl = previewUrl;
         mPlayStoreUrl = googleBooksUrl;
-        mPdfUrl = pdfUrl;
         mLanguage = language;
-    }
-
-    public Uri getImage() {
-        if(mImageUrl != null) {
-            return mImageUrl;
-        }
-        return null;
     }
 
     public String getTitle() {
@@ -101,13 +86,6 @@ public class Ebook {
     public String getPlayStoreUrl() {
         if(!TextUtils.isEmpty(mPlayStoreUrl)) {
             return mPlayStoreUrl;
-        }
-        return null;
-    }
-
-    public String getPdfUrl() {
-        if(!TextUtils.isEmpty(mPdfUrl)) {
-            return mPdfUrl;
         }
         return null;
     }

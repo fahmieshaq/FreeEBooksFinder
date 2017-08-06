@@ -86,7 +86,7 @@ public final class QueryUtils {
                 JSONObject pdfObject = accessInfoObject.optJSONObject("pdf");
                 String downloadLink = pdfObject.optString("downloadLink");
 
-                ebooks.add(new Ebook(thumbnailUri, title, categoriesJsonArray, authorsJsonArray, publishedDate, pageCount, previewLink, infoLink, downloadLink, language));
+                ebooks.add(new Ebook(title, categoriesJsonArray, authorsJsonArray, publishedDate, pageCount, previewLink, infoLink, language));
             }
         } catch (JSONException e) {
             Log.e("QueryUtils", "Problem parsing the ebooks JSON results", e);

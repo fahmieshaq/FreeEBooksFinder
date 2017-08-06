@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -41,11 +40,6 @@ public class EbookAdapter extends ArrayAdapter<Ebook>{
          * inner class
          */
         final Ebook currentEbook = getItem(position);
-
-        //******************************* Handle Image ****************************//
-        // Populate book image of the current ebook
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.list_item_ebook_image);
-        imageView.setVisibility(View.GONE);
 
         //******************************* Handle Title ****************************//
         // Populate book title of the current ebook
@@ -184,35 +178,6 @@ public class EbookAdapter extends ArrayAdapter<Ebook>{
             playStoreUrl = getContext().getString(R.string.list_item_ebook_value_not_available);
         }
         playStoreTextView.setText(playStoreUrl);
-
-        //******************************* Handle PDF Url ****************************//
-        // Populate the preview hyperlink of the current ebook.
-        TextView pdfTextView = (TextView) convertView.findViewById(R.id.list_item_ebook_pdf);
-        // The string represents a hyperlink e.g. Available. When user presses a hyperlink, a browser will open with the prospective URL
-        CharSequence pdfUrl;
-        // If pdf URL exists, display the word Available. Available is represented as hyperlink
-        String getPdfUrl = currentEbook.getPdfUrl();
-        if(getPdfUrl != null) {
-            // Get the word Available. The word is underlined. Use getText() to keep the word's rich content
-            pdfUrl = getContext().getText(R.string.list_item_ebook_value_available);
-            // Set text color to primary dark, so the user would know that the work Available is clickable
-            pdfTextView.setTextColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
-            // The click event opens a web browser with the google books Url
-            pdfTextView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(currentEbook.getPdfUrl()));
-                    if (intent.resolveActivity(getContext().getPackageManager()) != null) {
-                        getContext().startActivity(intent);
-                    }
-                }
-            });
-        } else {
-            // PDF URL doesn't exist. Display N/A message.
-            pdfUrl = getContext().getString(R.string.list_item_ebook_value_not_available);
-        }
-        pdfTextView.setText(pdfUrl);
 
         //******************************* Handle Language ****************************//
         // Populate language of the current ebook
