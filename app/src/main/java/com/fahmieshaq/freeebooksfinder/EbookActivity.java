@@ -31,6 +31,7 @@ public class EbookActivity extends AppCompatActivity implements LoaderManager.Lo
     private final int EBOOKS_LOADER_ID = 1;
 
     // Request URL constants will be constructed into a proper URL that can be used to receive data
+    // The maximum number of results to return by default is 10
     private final String ABSOLUTE_URL_REQUEST = "https://www.googleapis.com/books/v1/volumes?q=";
     private final String RELATIVE_URL_REQUEST = "&filter=free-ebooks&orderBy=relevance";
 
