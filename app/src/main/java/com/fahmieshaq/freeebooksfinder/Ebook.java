@@ -1,23 +1,37 @@
 package com.fahmieshaq.freeebooksfinder;
 
+import android.net.Uri;
 import android.text.TextUtils;
 
 import org.json.JSONArray;
 
+/**
+ * This class holds data returned from API json results.
+ */
 public class Ebook {
 
-    private String mImageUrl;
+    // mImageUrl represents book's epresents a URL of the book's image
+    private Uri mImageUrl;
+    // mTitle represents book's title
     private String mTitle;
+    // mCategory represents a list of categories that a book belongs to
     private JSONArray mCategory;
+    // mAuthor represents a list of authors
     private JSONArray mAuthor;
+    // mPublishedDate represents the publication date
     private String mPublishedDate;
+    // mPageCount represents the book's number of pages
     private String mPageCount;
+    // mPreviewUrl represents a URL of Google Books that allows the user to preview the book
     private String mPreviewUrl;
-    private String mGoogleBooksUrl;
+    // mPlayStoreUrl represents a URL of Play Store where the user can read the book
+    private String mPlayStoreUrl;
+    // mPdfUrl represents a URL of the PDF version of the book
     private String mPdfUrl;
+    // mLanguage represents the book's language
     private String mLanguage;
 
-    public Ebook(String imageUrl, String title, JSONArray category, JSONArray author, String publishedDate,
+    public Ebook(Uri imageUrl, String title, JSONArray category, JSONArray author, String publishedDate,
                  String pageCount, String previewUrl, String googleBooksUrl,
                  String pdfUrl, String language) {
         mImageUrl = imageUrl;
@@ -27,70 +41,81 @@ public class Ebook {
         mPublishedDate = publishedDate;
         mPageCount = pageCount;
         mPreviewUrl = previewUrl;
-        mGoogleBooksUrl = googleBooksUrl;
+        mPlayStoreUrl = googleBooksUrl;
         mPdfUrl = pdfUrl;
         mLanguage = language;
     }
 
-    public String getImage() { return mImageUrl; }
+    public Uri getImage() {
+        if(mImageUrl != null) {
+            return mImageUrl;
+        }
+        return null;
+    }
 
     public String getTitle() {
-        return mTitle;
+        if(!TextUtils.isEmpty(mTitle)) {
+            return mTitle;
+        }
+
+        return null;
     }
 
     public JSONArray getCategory() {
-        return mCategory;
+        if(mCategory != null) {
+            return mCategory;
+        }
+        return null;
     }
 
     public JSONArray getAuthor() {
-        return mAuthor;
+        if(mAuthor != null) {
+            return mAuthor;
+        }
+        return null;
     }
 
     public String getPublishedDate() {
-        return mPublishedDate;
+        if(!TextUtils.isEmpty(mPublishedDate)) {
+            return mPublishedDate;
+        }
+
+        return null;
     }
 
     public String getPageCount() {
-        return mPageCount;
+        if(!TextUtils.isEmpty(mPageCount)) {
+            return mPageCount;
+        }
+
+        return null;
     }
 
     public String getPreviewUrl() {
-        return mPreviewUrl;
+        if(!TextUtils.isEmpty(mPreviewUrl)) {
+            return mPreviewUrl;
+        }
+        return null;
     }
 
-    public String getGoogleBooksUrl() {
-        return mGoogleBooksUrl;
+    public String getPlayStoreUrl() {
+        if(!TextUtils.isEmpty(mPlayStoreUrl)) {
+            return mPlayStoreUrl;
+        }
+        return null;
     }
 
     public String getPdfUrl() {
-        return mPdfUrl;
+        if(!TextUtils.isEmpty(mPdfUrl)) {
+            return mPdfUrl;
+        }
+        return null;
     }
 
     public String getLanguage() {
-        return mLanguage;
-    }
-
-    public boolean isPreviewUrl() {
-        boolean isAvailable = false;
-        if(!TextUtils.isEmpty(mPreviewUrl)) {
-            isAvailable = true;
+        if(!TextUtils.isEmpty(mLanguage)) {
+            return mLanguage;
         }
-        return isAvailable;
-    }
-
-    public boolean isGoogleBooksUrl() {
-        boolean isAvailable = false;
-        if(!TextUtils.isEmpty(mGoogleBooksUrl)) {
-            isAvailable = true;
-        }
-        return isAvailable;
-    }
-
-    public boolean isPdfUrl() {
-        boolean isAvailable = false;
-        if(!TextUtils.isEmpty(mPdfUrl)) {
-            isAvailable = true;
-        }
-        return isAvailable;
+        return null;
     }
 }

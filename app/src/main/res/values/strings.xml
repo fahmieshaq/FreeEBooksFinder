@@ -27,7 +27,7 @@
     <string name="list_item_ebook_label_preview"><strong>Preview:</strong></string>
 
     <!-- Google Books label to display in the list item view [CHAR LIMIT=NONE] -->
-    <string name="list_item_ebook_label_google_books"><strong>Google Books:</strong></string>
+    <string name="list_item_ebook_label_google_play"><strong>Google Play:</strong></string>
 
     <!-- PDF label to display in the list item view [CHAR LIMIT=NONE] -->
     <string name="list_item_ebook_label_pdf"><strong>PDF:</strong></string>
@@ -35,9 +35,24 @@
     <!-- Language label to display in the list item view [CHAR LIMIT=NONE] -->
     <string name="list_item_ebook_label_language"><strong>Language:</strong></string>
 
-    <!-- Text to display in the list item view when a URL value is empty or null. N/A stands for Not Available [CHAR LIMIT=NONE] -->
+    <!-- Text to display in the list item view when a value is empty or null. N/A stands for Not Available [CHAR LIMIT=NONE] -->
     <string name="list_item_ebook_value_not_available">N/A</string>
 
     <!-- Text to display in the list item view when a URL value is available. This text is displayed as a hyperlink [CHAR LIMIT=NONE] -->
     <string name="list_item_ebook_value_available"><u>Available</u></string>
+
+    <!-- Text to display in the list item view when internet lost connection after the app initally had access to the internet successfully [CHAR LIMIT=NONE] -->
+    <string name="empty_state_no_internet">No internet connection.</string>
+
+    <!-- Text to display in the list item view when internet is not connected the very first time user opens the app [CHAR LIMIT=NONE] -->
+    <string name="empty_state_no_internet_first_time">No internet connection. Whenever you expect internet is back, please exit the app and relaunch it again because this version of the app doesn\'t monitor internet connectivity during the app execution. We apologize for the inconvenience.</string>
+
+    <!-- Text to display in the list item view on app first load [CHAR LIMIT=NONE] -->
+    <string name="empty_state_welcome">Type in an ebook in the above textbox and press Find to list all best matching books.</string>
+
+    <!-- Text to display in the list item view on app first load [CHAR LIMIT=NONE] -->
+    <string name="empty_state_no_ebooks">No matching ebooks found. Please try again</string>
+
+    <!-- Clear empty state message [CHAR LIMIT=NONE] -->
+    <string name="empty_state_null"></string>
 </resources>

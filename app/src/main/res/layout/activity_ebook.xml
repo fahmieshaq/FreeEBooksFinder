@@ -29,20 +29,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/activity_ebook_edittext_hint_ebook_name" />
+            android:hint="@string/activity_ebook_edittext_hint_ebook_name"
+            android:inputType="textPersonName" />
 
         <Button
+            android:id="@+id/findButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/activity_ebook_button_find"
             android:layout_marginLeft="8dp"/>
     </LinearLayout>
 
-    <ListView
-        android:paddingTop="8dp"
-        android:id="@+id/ebooksListView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorContentBackground" />
+        android:layout_height="match_parent">
+        <ListView
+            android:paddingTop="8dp"
+            android:id="@+id/ebooksListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorContentBackground" />
+
+        <ProgressBar
+            android:id="@+id/indeterminateBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/emptyStateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_centerInParent="true"
+            android:padding="24dp"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+
+
 </LinearLayout>

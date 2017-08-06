@@ -1,23 +1,31 @@
 package com.fahmieshaq.freeebooksfinder;
 
-import android.content.AsyncTaskLoader;
+import android.support.v4.content.AsyncTaskLoader;
 import android.content.Context;
 
 import java.util.List;
 
+/**
+ * This loader runs network request and json data extraction in the background
+ */
 public class EbookLoader extends AsyncTaskLoader<List<Ebook>> {
-    public EbookLoader(Context context) {
-        super(context);
-    }
 
-    @Override
-    protected void onStartLoading() {
-        super.onStartLoading();
+    private final String mRequestUrl;
+
+    public EbookLoader(Context context, String requestUrl) {
+        super(context);
+        mRequestUrl = requestUrl;
     }
 
     @Override
     public List<Ebook> loadInBackground() {
-        
-        return null;
+        // Pass API URL request to get a list of ebooks data to be displayed to the user
+        return QueryUtils.fetchEbookData(mRequestUrl);
     }
+
+    @Override
+    protected void onStartLoading() {
+        forceLoad();
+    }
+
 }

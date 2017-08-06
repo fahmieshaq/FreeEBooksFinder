@@ -14,7 +14,8 @@
         tools:text="Flowers from Hill and Dale"
         android:gravity="center_horizontal"
         android:textAppearance="?android:textAppearanceLarge"
-        android:textColor="@color/colorPrimaryDark" />
+        android:textColor="@color/colorPrimaryDark"
+        android:padding="16dp"/>
 
     <ImageView
         android:id="@+id/list_item_ebook_image"
@@ -42,7 +43,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Flowers, Houses"
-            android:textAppearance="?android:textAppearanceSmall" />
+            android:textAppearance="?android:textAppearanceSmall"
+            android:paddingRight="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -63,7 +65,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Anne Pratt, Fahmi Eshaq, James Arnold"
-            android:textAppearance="?android:textAppearanceSmall" />
+            android:textAppearance="?android:textAppearanceSmall"
+            android:paddingRight="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -141,11 +144,11 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="@string/list_item_ebook_label_google_books"
+            android:text="@string/list_item_ebook_label_google_play"
             android:textAppearance="?android:textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/list_item_ebook_google_books"
+            android:id="@+id/list_item_ebook_play_store"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Available"

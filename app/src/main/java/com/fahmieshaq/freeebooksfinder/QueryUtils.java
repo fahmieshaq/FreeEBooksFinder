@@ -1,5 +1,6 @@
 package com.fahmieshaq.freeebooksfinder;
 
+import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -18,11 +19,19 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+// This class handle http request and extract data from json results.
 public final class QueryUtils {
+
     private static final String LOG_TAG = QueryUtils.class.getSimpleName();
 
+    /**
+     * Make http request and then extract data from json results
+     * @param urlString represents the URL request which holds the user's search keyword
+     * @return a top 10 list of ebooks that best match user's search keyword
+     */
     public static final List<Ebook> fetchEbookData(String urlString) {
         URL url = createUrl(urlString);
+
         String jsonResults = null;
         try {
             jsonResults = makeHttpRequest(url);
@@ -35,6 +44,13 @@ public final class QueryUtils {
         return ebooks;
     }
 
+    /**
+     * Traverse through the returned json results, extract all necessary
+     * ebooks data, such as title, and then add the extracted into an
+     * ArrayList of ebooks object
+     * @param ebooksJson represents json results received from the http request
+     * @return a list of ebook objects. Each object holds numbers of data of a single book
+     */
     private static final List<Ebook> extractDataFromJson(String ebooksJson) {
         if (TextUtils.isEmpty(ebooksJson)) {
             return null;
@@ -44,7 +60,6 @@ public final class QueryUtils {
         List<Ebook> ebooks = new ArrayList<>();
 
         try {
-
             // Traverse through the json string and fetch ebooks necessary data
             // and add them to ebooks array list
             JSONObject baseJsonResponse = new JSONObject(ebooksJson);
@@ -62,7 +77,7 @@ public final class QueryUtils {
 
                 JSONObject imageLinksObject = volumeInfoObject.optJSONObject("imageLinks");
                 String thumbnail = imageLinksObject.optString("thumbnail");
-
+                Uri thumbnailUri = Uri.parse(thumbnail);
                 String language = volumeInfoObject.optString("language");
                 String previewLink = volumeInfoObject.optString("previewLink");
                 String infoLink = volumeInfoObject.optString("infoLink");
@@ -71,9 +86,8 @@ public final class QueryUtils {
                 JSONObject pdfObject = accessInfoObject.optJSONObject("pdf");
                 String downloadLink = pdfObject.optString("downloadLink");
 
-                ebooks.add(new Ebook(thumbnail, title, categoriesJsonArray, authorsJsonArray, publishedDate, pageCount, previewLink, infoLink, downloadLink, language));
+                ebooks.add(new Ebook(thumbnailUri, title, categoriesJsonArray, authorsJsonArray, publishedDate, pageCount, previewLink, infoLink, downloadLink, language));
             }
-
         } catch (JSONException e) {
             Log.e("QueryUtils", "Problem parsing the ebooks JSON results", e);
         }
@@ -82,6 +96,11 @@ public final class QueryUtils {
         return ebooks;
     }
 
+    /**
+     * This method converts a url request string into a url object
+     * @param urlString represents an API url request string
+     * @return a URL object of the url request string
+     */
     private static final URL createUrl(String urlString) {
         if (TextUtils.isEmpty(urlString)) {
             return null;
@@ -96,11 +115,17 @@ public final class QueryUtils {
         return url;
     }
 
+    /**
+     * This method connects the url request to the internet and reads the
+     * returned stream of bytes into json string
+     * @param url represents the request URL
+     * @return a json string which holds the necessary data the was requested by the passed URL
+     * @throws IOException To run this code inputStream.close(), we had to locally catch or throw IOException.
+     */
     private static final String makeHttpRequest(URL url) throws IOException {
         HttpURLConnection connection = null;
         InputStream inputStream = null;
-        String jsonResponse = "";
-
+        String jsonResponse = null;
         try {
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
@@ -129,6 +154,11 @@ public final class QueryUtils {
         return jsonResponse;
     }
 
+    /**
+     * This method interprets stream of bytes into a readable stream of characters i.e. json
+     * @param inputStream represents the bytes results of the url request
+     * @return a String that represents json response
+     */
     private static final String readFromStream(InputStream inputStream) {
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream, Charset.forName("UTF-8"));
         BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -142,7 +172,6 @@ public final class QueryUtils {
         } catch (IOException e) {
             Log.e(LOG_TAG, "BufferedReader failure", e);
         }
-
         return output.toString();
     }
 }
