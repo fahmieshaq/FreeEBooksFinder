@@ -65,6 +65,13 @@ public final class QueryUtils {
             JSONObject baseJsonResponse = new JSONObject(ebooksJson);
             JSONArray itemsJsonArray = baseJsonResponse.optJSONArray("items");
 
+            // items array is where all data belongs. If the array is null,
+            // return null. Otherwise, calling itemsJsonArray.length() in the next
+            // block will throw java.lang.NullPointerException
+            if (itemsJsonArray == null) {
+                return null;
+            }
+
             for (int i = 0; i < itemsJsonArray.length(); i++) {
                 JSONObject itemJsonObject = itemsJsonArray.optJSONObject(i);
 
