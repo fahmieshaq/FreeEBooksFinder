@@ -9,7 +9,7 @@
     <string name="activity_ebook_button_find">Find</string>
 
     <!-- Text to display as the header title of main activity [CHAR LIMIT=NONE] -->
-    <string name="activity_ebook_header"><b><i>Free</i></b> eBooks Listing</string>
+    <string name="activity_ebook_header">Top 10 <b><i>Free</i></b> eBooks</string>
 
     <!-- Categories label to display in the list item view [CHAR LIMIT=NONE] -->
     <string name="list_item_ebook_label_categories"><strong>Categories:</strong></string>
@@ -48,7 +48,7 @@
     <string name="empty_state_no_internet_first_time">No internet connection. Whenever you expect internet is back, please exit the app and relaunch it again because this version of the app doesn\'t monitor internet connectivity during the app execution. We apologize for the inconvenience.</string>
 
     <!-- Text to display in the list item view on app first load [CHAR LIMIT=NONE] -->
-    <string name="empty_state_welcome">Type in an ebook in the above textbox and press Find to list all best matching books.</string>
+    <string name="empty_state_welcome">Type in your search keyword in the above textbox and press Find to list top 10 best matching books.</string>
 
     <!-- Text to display in the list item view on app first load [CHAR LIMIT=NONE] -->
     <string name="empty_state_no_ebooks">No matching ebooks found. Please try again</string>
