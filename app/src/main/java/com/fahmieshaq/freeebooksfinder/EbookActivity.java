@@ -21,6 +21,7 @@ import java.util.List;
 
 public class EbookActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Ebook>> {
 
+    // Added LOG_TAG
     private final static String LOG_TAG = EbookActivity.class.getName();
 
     /**
